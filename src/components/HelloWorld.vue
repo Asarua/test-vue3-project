@@ -16,8 +16,10 @@ export default {
   setup() {
     const value = inject(key)
     
-    watch(() => value.a, v => {
+    watch(() => value, v => {
       console.log(v)
+    }, {
+      deep: true
     })
 
     return {
